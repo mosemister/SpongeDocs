@@ -36,6 +36,10 @@ Sending a Command As a Player
 
 .. code-block:: java
 
+    ServerPlayer player;
+
+    Sponge.server().causeStackManager().pushCause(player);
+    CommandManager cmdManager = Sponge.server().commandManager();
     cmdManager.process(player, "msg Notch hi notch!");
 
 Sending a Command As a Console
@@ -45,6 +49,10 @@ Sending a Command As a Console
 
 .. code-block:: java
 
+    SystemSubject console = Sponge.systemSubject();
+    
+    Sponge.server().causeStackManager().pushCause(console);
+    CommandManager cmdManager = Sponge.server().commandManager();
     cmdManager.process(Sponge.systemSubject(), "kill Notch");
 
 Sending a Command As a Player With Console Permissions
